@@ -34,7 +34,7 @@ public class InvestmentCalculatorUnitTest {
     }
 
     @Test
-    public void testfutureValueWithRateOfZero() {
+    public void testFutureValueWithRateOfZero() {
         double P = 1000;
         double r = 0;   //no rate
         int n = 7;   //years
