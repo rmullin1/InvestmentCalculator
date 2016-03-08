@@ -33,5 +33,15 @@ public class InvestmentCalculatorUnitTest {
         assertEquals(11463.88, value, 0.01);
     }
 
+    @Test
+    public void testfutureValueWithRateOfZero() {
+        double P = 1000;
+        double r = 0;   //no rate
+        int n = 7;   //years
+
+        InvestmentCalculator calculator = new InvestmentCalculator();
+        double value = calculator.calculateFutureValue(P, r, n);
+        assertEquals(7000, value, 0.01);
+    }
 
 }
