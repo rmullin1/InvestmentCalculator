@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">WayneMullinsInvestmentCalculator</string>
+    <string name="app_name">Investment Calculator</string>
     <string name="action_settings">Settings</string>
+    <string name="label_periodic_payment">Periodic Payment (P):</string>
+    <string name="label_rate_per_period">Rate per Period as % (r):</string>
+    <string name="label_number_periods">Number of Periods {n):</string>
+    <string name="label_future_value">Future Value (FV):</string>
+    <string name="label_calculate">Calculate</string>
 </resources>
