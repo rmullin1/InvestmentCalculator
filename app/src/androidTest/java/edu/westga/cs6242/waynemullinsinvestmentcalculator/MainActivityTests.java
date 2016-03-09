@@ -93,7 +93,7 @@ public class MainActivityTests extends ActivityInstrumentationTestCase2<MainActi
         assertEquals("Periods is a required value!", lblError.getText());
     }//testPeriodsIsRequired()
 
-    public void testRateForZero() {
+    public void testFutureValueForRateOfZero() {
         MainActivity activity = testSetup();
         getInstrumentation().runOnMainSync(new Runnable() {
             @Override
@@ -106,9 +106,9 @@ public class MainActivityTests extends ActivityInstrumentationTestCase2<MainActi
         TouchUtils.clickView(this, btnCalculate);
         getInstrumentation().waitForIdleSync();
         assertEquals("$25,000.00", txtValue.getText().toString());
-    }
+    }//testFutureValueForRateOfZero()
 
-    public void testValueForValidParameters() {
+    public void testFutureValueForValidParameters() {
         MainActivity activity = testSetup();
         getInstrumentation().runOnMainSync(new Runnable() {
             @Override
@@ -121,5 +121,5 @@ public class MainActivityTests extends ActivityInstrumentationTestCase2<MainActi
         TouchUtils.clickView(this, btnCalculate);
         getInstrumentation().waitForIdleSync();
         assertEquals("$5,204.04", txtValue.getText().toString());
-    }
+    }//testFutureValueForValidParameters
 }
