@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 import edu.westga.cs6242.waynemullinsinvestmentcalculator.model.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,11 +74,19 @@ public class MainActivity extends AppCompatActivity {
             lblError.setText(this.errorMessage);
             return;
         }
-        findViewById(R.id.btnCalculate).setBackgroundColor(Color.RED);
+        //findViewById(R.id.btnCalculate).setBackgroundColor(Color.RED);
         double payment = Double.parseDouble(txtPayment.getText().toString());
         double rate = Double.parseDouble(txtRate.getText().toString());
         int periods = Integer.parseInt(txtPeriods.getText().toString());
-        lblError.setText(this.errorMessage);
+        model.setPayment(payment);
+        model.setRate(rate);
+        model.setPeriods(periods);
+        double value = model.calculateFutureValue();
+        DecimalFormat formatter = new DecimalFormat("$#,###.00");
+        txtValue.setText(formatter.format(value));
+        float x = txtValue.getTextSize();
+        lblError.setText("");
+        //findViewById(R.id.btnCalculate).setBackgroundColor(Color.RED);
     }
 
     public boolean validate() {
